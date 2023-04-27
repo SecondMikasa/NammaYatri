@@ -23,9 +23,9 @@ double calculatePerformanceMetric(double totalEarnings, int numRides) {
 }
 
 int main() {
-  double driverEarnings; // total earnings for the driver
-  int driverRides; // number of rides given by the driver
-  cin >> driverEarnings >> driverRides;
+  double driverEarnings = 500; // total earnings for the driver
+  int driverRides = 25; // number of rides given by the driver
+  //cin >> driverEarnings >> driverRides; if we wished to take random inputs
   double driverBonus = calculatePerformanceMetric(driverEarnings, driverRides);
   cout << "Driver bonus: Rs" << fixed << setprecision(2) << driverBonus << endl;
   return 0;
