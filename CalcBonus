@@ -4,29 +4,29 @@
 using namespace std;
 
 // Define some constants
-const int BASE_BONUS = 100; // base bonus for each driver
-const int RIDES_PER_BONUS = 10; // number of rides needed to earn a bonus
+int BASE_BONUS = 100; // base bonus for each driver
+int RIDES_PER_BONUS = 10; // number of rides needed to earn a bonus
 
 // Calculate the performance metric for a given driver
 double calculatePerformanceMetric(double totalEarnings, int numRides) {
-  // Calculate the average fare paid per ride
-  const double averageFare = totalEarnings / numRides;
+  // Calculate the average fare driver got paid per ride
+  double averageFare = totalEarnings / numRides;
   
   // Calculate the number of bonuses earned based on the number of rides
-  const int numBonuses = floor(numRides / RIDES_PER_BONUS);
+  int numBonuses = floor(numRides / RIDES_PER_BONUS);
   
   // Calculate the bonus amount based on the performance metric
-  const double bonusAmount = BASE_BONUS + (averageFare * numBonuses);
+  double bonusAmount = BASE_BONUS + (averageFare * numBonuses);
   
   // Return the bonus amount
   return bonusAmount;
 }
 
 int main() {
-  // Example usage
-  const double driverEarnings = 500; // total earnings for the driver
-  const int driverRides = 25; // number of rides given by the driver
-  const double driverBonus = calculatePerformanceMetric(driverEarnings, driverRides);
+  double driverEarnings; // total earnings for the driver
+  int driverRides; // number of rides given by the driver
+  cin >> driverEarnings >> driverRides;
+  double driverBonus = calculatePerformanceMetric(driverEarnings, driverRides);
   cout << "Driver bonus: Rs" << fixed << setprecision(2) << driverBonus << endl;
   return 0;
 }
